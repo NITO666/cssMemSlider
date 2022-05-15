@@ -1,18 +1,41 @@
-let controls = document.querySelectorAll('.control')
 let imgs = document.querySelectorAll('.img')
-let texts = document.querySelectorAll('.text')
+let controlPlace = document.querySelector('.control-container')
+let textContainer = document.querySelector('.text-container')
 let check = true
 let response = await fetch("./pull.json")
 let pull = await response.json()
-console.log(pull)
+
+function createElements(){
+    for(let i = 0; i < pull.length;i++){
+        let controlBody = document.createElement('div')
+        let control = document.createElement('div')
+        controlBody.className = 'control-body'
+        control.className = 'control'
+        controlPlace.appendChild(controlBody)
+        controlBody.appendChild(control)
+        if(i == 0){
+            control.classList.add('active')
+        }
+    }
+    for(let i = 0; i < 2;i++){
+        let p = document.createElement('p')
+        p.className = 'text'
+        p.innerHTML = pull[0].text
+        textContainer.appendChild(p)
+    }
+}
+createElements()
+let controls = document.querySelectorAll('.control-body')
+let texts = document.querySelectorAll('.text')
 controls.forEach((el,i)=>{
  el.addEventListener('click',()=>{
-    if(!(el.classList.contains('active'))){
+    let k = el.querySelector('.control')
+    if(!(k.classList.contains('active'))){
         if(check == true){
             controls.forEach((f)=>{
-                f.classList.remove('active')
+                f.querySelector('.control').classList.remove('active')
             })
-            el.classList.add('active')
+            k.classList.add('active')
             imgs.forEach((e,d)=>{
                check = false
                if(d == 0){
@@ -23,11 +46,10 @@ controls.forEach((el,i)=>{
                         e.style.backgroundImage = pull[i].src
                     },400)
                     setTimeout(()=>{
-                        e.style.zIndex = '0'
+                        e.style.zIndex = '1'
                         check = true
                     },700)
                }else if(d == 1){
-                    e.style.zIndex = '-1'
                     e.style.backgroundImage = pull[i].src
                }
             })
@@ -35,7 +57,7 @@ controls.forEach((el,i)=>{
                 if(l == 0){
                     g.classList.add('next')
                     setTimeout(()=>{
-                        g.style.zIndex = '-1'
+                        g.style.zIndex = '-2'
                         g.classList.remove('next')
                         g.innerHTML = pull[i].text
                     },150)
@@ -45,7 +67,7 @@ controls.forEach((el,i)=>{
                }else if(l == 1){
                     g.classList.remove('prev')
                     setTimeout(()=>{
-                        g.style.zIndex = '-1'
+                        g.style.zIndex = '-2'
                         g.classList.add('prev')
                         g.innerHTML = pull[i].text
                     },400)

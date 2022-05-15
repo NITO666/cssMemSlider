@@ -1,14 +1,18 @@
 [
     {
-        "src":"url('./assets/0.jpg')",
-        "text":"TEXT1"
+        "src":"url('./assets/0.png')",
+        "text":"Придумывать текст ?"
     },
     {
-        "src":"url('./assets/1.jpg')",
-        "text":"TEXT2"
+        "src":"url('./assets/1.png')",
+        "text":"Классно придуманно"
     },
     {
-        "src":"url('./assets/2.jpg')",
-        "text":"TEXT3"
+        "src":"url('./assets/2.png')",
+        "text":"Спасибо"
+    },
+    {
+        "src":"url('./assets/3.png')",
+        "text":"Я не старался"
     }
 ]
