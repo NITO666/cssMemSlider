@@ -25,7 +25,7 @@
     position: absolute;
     width: 700px;
     height: 500px;
-    background-image: url('./assets/0.png');
+    background: url('./assets/0.png') white;
     background-repeat: no-repeat;
     background-size: contain;
     background-position: 50%;
