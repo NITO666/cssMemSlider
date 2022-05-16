@@ -51,11 +51,11 @@
 }
 .control-container{
     display: flex;
-    gap: 10px;
+    gap: 5px;
 }
 .control-body{
-    width: 40px;
-    height: 40px;
+    width: 20px;
+    height: 20px;
     display: flex;
     justify-content: center;
     align-items: center;
