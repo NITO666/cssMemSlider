@@ -7,21 +7,39 @@
     <title>cssMemSlider</title>
 </head>
 <body>
-    <div>Я идиот, и неправильно понял условия задания, так что мемы отменяются</div>
     <div class="container">
         <div class="slider">
+            <input type="radio" name="point" id="slide1" checked>
+            <input type="radio" name="point" id="slide2">
+            <input type="radio" name="point" id="slide3">
+            <input type="radio" name="point" id="slide4">
             <div class="img-container">
-                <div class="img"></div>
-                <div class="img"></div>
+                <img src="./assets/0.png" alt="1" class="img s1">
+                <img src="./assets/1.png" alt="2" class="img s2">
+                <img src="./assets/2.png" alt="3" class="img s3">
+                <img src="./assets/3.png" alt="4" class="img s4">
             </div>
             <div class="control-container">
-              
+              <label for="slide1" class="control-body">
+                  <div class="control"></div>
+              </label>
+              <label for="slide2" class="control-body">
+                  <div class="control"></div>
+              </label>
+              <label for="slide3" class="control-body">
+                  <div class="control"></div>
+              </label>
+              <label for="slide4" class="control-body">
+                  <div class="control"></div>
+              </label>
             </div>
             <div class="text-container">
-                
+                <div class="text s1">Текст прикол</div>
+                <div class="text s2">Вот еще прикол</div>
+                <div class="text s3">Рандом текст</div>
+                <div class="text s4">Прикинь)</div>
             </div>
         </div>
     </div>
-    <!--<script src="script.js" type="module"></script>-->
 </body>
 </html>
